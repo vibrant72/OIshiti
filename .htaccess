@@ -1,0 +1,60 @@
+#此文件为Apache的伪静态文件
+#PHPWAMP官方网址：http://www.phpwamp.com  帮助中心http://www.lccee.com  软件作者：Lccee   联系QQ10850110
+
+ErrorDocument 404 /404.html
+
+
+
+# 将以下是301跳转设置，请自定修改为您的域名
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^baidu.com$ [NC,OR]
+RewriteCond %{HTTP_HOST} ^bbs.phpwamp.com$ 
+RewriteRule ^(.*)$ http://www.phpwamp.com/$1 [R=301,L]
+</IfModule>
+
+
+
+
+
+# 将 RewriteEngine 模式打开
+RewriteEngine On
+
+
+#PHPWAMP默认已经配置好Discuz论坛伪静态规则。其他系统的伪静态设置，请自行修改此文件，如有疑问请咨询PHPWAMP软件的作者LCCEE，联系方式：PHPWAMP.COM LCCEE.COM  
+#PHPWAMP官方网址：http://www.phpwamp.com    http://www.lccee.com
+
+
+
+#以下为Discuz 论坛伪静态设置,去掉下面的#即可生效
+
+#RewriteBase /为您的论坛目录地址，如果程序放在根目录中则为：RewriteBase /，如果论坛放在根目录里面的aaa文件夹，那么下面这句应改为RewriteBase /aaa
+#------------------------------------------------------------------------------------------------
+
+#RewriteBase /
+
+# Rewrite 系统规则请勿修改
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^topic-(.+)\.html$ portal.php?mod=topic&topic=$1&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^article-([0-9]+)-([0-9]+)\.html$ portal.php?mod=view&aid=$1&page=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^forum-(\w+)-([0-9]+)\.html$ forum.php?mod=forumdisplay&fid=$1&page=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ forum.php?mod=viewthread&tid=$1&extra=page\%3D$3&page=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^group-([0-9]+)-([0-9]+)\.html$ forum.php?mod=group&fid=$1&page=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^space-(username|uid)-(.+)\.html$ home.php?mod=space&$1=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^blog-([0-9]+)-([0-9]+)\.html$ home.php?mod=space&uid=$1&do=blog&id=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^archiver/(fid|tid)-([0-9]+)\.html$ archiver/index.php?action=$1&value=$2&%1
+#RewriteCond %{QUERY_STRING} ^(.*)$
+#RewriteRule ^([a-z]+[a-z0-9_]*)-([a-z0-9_\-]+)\.html$ plugin.php?id=$1:$2&%1
+
+#------------------------------------------------------------------------------------------------
+
+
+
+
